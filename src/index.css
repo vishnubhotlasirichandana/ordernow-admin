@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors */
+  --color-cream: #F4F6F8;
+  --color-beige: #EFE5D5;
+  --color-primary: #FF6D1F;
+  --color-primary-hover: #E55C15;
+  --color-dark: #212B36;
+  --color-secondary: #637381;
+  --color-success: #22C55E;
+  --color-danger: #FF5630;
+  --color-warning: #FFAB00;
+  --color-info: #00B8D9;
+  --color-surface: #FFFFFF;
+
+  /* Custom Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  /* Custom Shadows */
+  --shadow-card: 0 0 2px 0 rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12);
+  --shadow-dropdown: 0 0 2px 0 rgba(145, 158, 171, 0.24), -20px 20px 40px -4px rgba(145, 158, 171, 0.24);
+
+  /* Custom Border Radius */
+  --radius-xl: 16px;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-dark antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-bold text-dark;
+  }
+}
+
+@layer components {
+  /* --- Buttons --- */
+  .btn-primary {
+    @apply bg-primary text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-primary/25 
+    hover:bg-primary-hover hover:shadow-primary/40 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-dark font-semibold px-5 py-2.5 rounded-xl border border-gray-300 
+    hover:bg-gray-50 hover:border-gray-400 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 text-red-600 font-semibold px-4 py-2 rounded-lg hover:bg-red-100 transition-colors;
+  }
+
+  /* --- Cards --- */
+  .card-base {
+    @apply bg-surface rounded-2xl shadow-card border border-transparent overflow-hidden;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-white;
+  }
+
+  /* --- Forms --- */
+  .input-label {
+    @apply block text-sm font-semibold text-dark mb-1.5;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-2.5 bg-white text-dark text-sm
+    focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400 disabled:bg-gray-50 disabled:text-gray-500;
+  }
+
+  /* --- Tables --- */
+  .table-container {
+    @apply w-full overflow-x-auto;
+  }
+
+  .professional-table {
+    @apply w-full border-collapse text-left;
+  }
+
+  .professional-table thead {
+    @apply bg-gray-50 border-b border-gray-200;
+  }
+
+  .professional-table th {
+    @apply py-4 px-6 text-xs font-bold text-secondary uppercase tracking-wider whitespace-nowrap;
+  }
+
+  .professional-table td {
+    @apply py-4 px-6 text-sm text-dark border-b border-gray-100 whitespace-nowrap;
+  }
+
+  .professional-table tr:hover {
+    @apply bg-gray-50/50 transition-colors;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF; 
+}

@@ -1,0 +1,5 @@
+/* Resetting default App styles to allow Layout.jsx to control structure */
+#root {
+  width: 100%;
+  height: 100%;
+}
